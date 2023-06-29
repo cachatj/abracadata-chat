@@ -1,4 +1,4 @@
-PROJECT_DIR="/Users/jonathan.cachat/Documents/AbracaDATA_Confluence/chat-w-confluence_app"
+PROJECT_DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "$PROJECT_DIR"
 pip install -r requirements.txt
