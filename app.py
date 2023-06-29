@@ -10,11 +10,11 @@ from confluence_qa import ConfluenceQA
 try:
     from hyperplane.utils import is_jhub
     if is_jhub():
-        openaiKeyFile = '/root/.secret/openai_key.json'
+        openaiKeyFile = '.env'
     else:
-        openaiKeyFile = '/etc/hyperplane/secrets/openai_key.json'
+        openaiKeyFile = '.env'
     with open(openaiKeyFile) as f:
-        os.environ["OPENAI_API_KEY"] = json.load(f)['openai_key']
+        os.environ["OPENAI_API_KEY"] = "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"
 except Exception as e:
     print(e)
     load_dotenv()
