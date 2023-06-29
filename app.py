@@ -46,9 +46,9 @@ with st.sidebar.form(key ='Form1'):
     space_key = st.text_input(label="confluence space",
                              help="Space of Confluence",
                              value="AB")
-    token = st.text_input(label="Mzc1NzE1ODgwMTc1OnsW6EPgJyX/UgVVCKaFUeHeCqjH",
+    token = st.text_input(label="token",
                             help="leave blank if confluence page is public",
-                            type="password")
+                            value="Mzc1NzE1ODgwMTc1OnsW6EPgJyX/UgVVCKaFUeHeCqjH")
     submitted1 = st.form_submit_button(label='Submit')
 
     if submitted1 and confluence_url and space_key:
