@@ -14,7 +14,7 @@ try:
     else:
         openaiKeyFile = '.env'
     with open(openaiKeyFile) as f:
-        os.environ["OPENAI_API_KEY"] = "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"
+        os.environ["OPENAI_token"] = "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"
 except Exception as e:
     print(e)
     load_dotenv()
@@ -42,14 +42,11 @@ def load_confluence(config):
 
 with st.sidebar.form(key ='Form1'):
     st.markdown('## Add your configs')
-    confluence_url = st.text_input("paste the confluence URL", "https://templates.atlassian.net/wiki/")
-    username = st.text_input(label="confluence username",
-                             help="leave blank if confluence page is public",
-                             type="password")
+    confluence_url = st.text_input("paste the confluence URL", "https://confluence.cardinalhealth.com")
     space_key = st.text_input(label="confluence space",
                              help="Space of Confluence",
-                             value="RD")
-    api_key = st.text_input(label="confluence api key",
+                             value="AB")
+    token = st.text_input(label="Mzc1NzE1ODgwMTc1OnsW6EPgJyX/UgVVCKaFUeHeCqjH",
                             help="leave blank if confluence page is public",
                             type="password")
     submitted1 = st.form_submit_button(label='Submit')
@@ -58,8 +55,7 @@ with st.sidebar.form(key ='Form1'):
         st.session_state["config"] = {
             "persist_directory": None,
             "confluence_url": confluence_url,
-            "username": username if username != "" else None,
-            "api_key": api_key if api_key != "" else None,
+            "token": token if token != "" else None,
             "space_key": space_key,
         }
         with st.spinner(text="Ingesting Confluence..."):
